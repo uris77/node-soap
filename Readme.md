@@ -176,7 +176,7 @@ We can make requests to the marketo API using the marketo client:
   soap.createMarketoClient(url, function(err, client) {
       client.addSoapHeader(header, 'AuthenticationHeader', 'tns', mktowNamespace);
       client.syncLead(leads, function(err, result){
-        consle.log('Result: ', result.result);
+        console.log('Result: ', result.result);
       });
   });
 ```
