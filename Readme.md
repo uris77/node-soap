@@ -166,3 +166,17 @@ WSSecurity implements WS-Security.  UsernameToken and PasswordText/PasswordDiges
   new WSSecurity(username, password, passwordType)
     //'PasswordDigest' or 'PasswordText' default is PasswordText
 ```
+
+## Marketo
+We can make requests to the marketo API using the marketo client:
+
+```javascript
+  var soap = require('soap');
+  var mktowNamespace = 'http://www.marketo.com/mktows/'
+  soap.createMarketoClient(url, function(err, client) {
+      client.addSoapHeader(header, 'AuthenticationHeader', 'tns', mktowNamespace);
+      client.syncLead(leads, function(err, result){
+        consle.log('Result: ', result.result);
+      });
+  });
+```
